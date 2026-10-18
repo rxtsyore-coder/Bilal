@@ -1,17 +1,3 @@
-# -*- coding: utf-8 -*-
-# ═══════════════════════════════════════════════════════════════════
-#  🇧🇩  TCP NAIM — PREMIUM DASHBOARD SERVER  🇧🇩
-#  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-#     👑 Owner      : TCP NAIM
-#     🌏 Country    : Bangladesh 🇧🇩
-#     🎮 Purpose    : Real-Time EXP & Squad Dashboard
-#     ⚡ Version    : PREMIUM EDITION v2.0
-#     📅 Build      : 2026
-#  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-#  ⚠️  Unauthorized copy/redistribution is strictly prohibited!
-#  © 2026 TCP NAIM — All Rights Reserved
-# ═══════════════════════════════════════════════════════════════════
-
 import asyncio
 import json
 import os
@@ -33,11 +19,11 @@ from google.protobuf.json_format import MessageToDict
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # ═══════════════════════════ BRAND ═══════════════════════════
-BRAND_NAME       = "TCP NAIM"
-BRAND_COUNTRY    = "Bangladesh 🇧🇩"
+BRAND_NAME       = "TCP BILAL"
+BRAND_COUNTRY    = "ALGERIA 🇩🇿"
 BRAND_VERSION    = "PREMIUM v2.0"
 BRAND_YEAR       = "2026"
-BRAND_TAGLINE    = "🔥 Bangladesh's #1 Squad Bot 🔥"
+BRAND_TAGLINE    = "🔥 ALGERIA's #1 Squad Bot 🔥"
 
 TEMPLATE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "MAHIN_CODEX", "index.html")
 
@@ -56,9 +42,9 @@ GAME_HEADERS = {
     "Expect": "100-continue"
 }
 
-# ═══════════════════════════ 🇧🇩 BD FIRST — Region Map ═══════════════════════════
+# ═══════════════════════════ 🇩🇿 BD FIRST — Region Map ═══════════════════════════
 REGION_SERVER_MAP = {
-    # 🇧🇩 Bangladesh FIRST (Priority)
+    # 🇩🇿 ALGERIA FIRST (Priority)
     "BD":  ("https://clientbp.ggwhitehawk.com", "clientbp.ggwhitehawk.com"),
     "BGD": ("https://clientbp.ggwhitehawk.com", "clientbp.ggwhitehawk.com"),
     # Other regions
@@ -77,9 +63,9 @@ REGION_SERVER_MAP = {
     "TW":  ("https://client.tw.freefiremobile.com", "client.tw.freefiremobile.com"),
     "CIS": ("https://client.cis.freefiremobile.com", "client.cis.freefiremobile.com"),
 }
-DEFAULT_SERVER_URL = "https://clientbp.ggwhitehawk.com"  # 🇧🇩 BD default
-DEFAULT_HOST = "clientbp.ggwhitehawk.com"                # 🇧🇩 BD default
-DEFAULT_REGION = "BD"                                    # 🇧🇩 BD default
+DEFAULT_SERVER_URL = "https://clientbp.ggwhitehawk.com"  # 🇩🇿 BD default
+DEFAULT_HOST = "clientbp.ggwhitehawk.com"                # 🇩🇿 BD default
+DEFAULT_REGION = "BD"                                    # 🇩🇿 BD default
 
 def encrypt_payload(data):
     cipher = AES.new(KEY, AES.MODE_CBC, IV)
@@ -579,12 +565,12 @@ class BotState:
 
 bot_state = BotState()
 
-# ═══════════════════════════ 🇧🇩 PREMIUM FALLBACK ═══════════════════════════
+# ═══════════════════════════ 🇩🇿 PREMIUM FALLBACK ═══════════════════════════
 FALLBACK_INDEX_HTML = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🇧🇩 TCP NAIM — Premium Squad Bot Dashboard</title>
+<title>🇩🇿 TCP BILAL — Premium Squad Bot Dashboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -646,12 +632,12 @@ h2 {
 </head>
 <body>
 <div class="container">
-  <div class="flag">🇧🇩</div>
-  <h1>TCP NAIM</h1>
+  <div class="flag">🇩🇿</div>
+  <h1>TCP BILAL</h1>
   <h2>PREMIUM SQUAD BOT DASHBOARD</h2>
 
   <div>
-    <span class="badge badge-bd">🇧🇩 Bangladesh Edition</span>
+    <span class="badge badge-bd">🇩🇿 ALGERIA Edition</span>
     <span class="badge badge-gold">⚡ PREMIUM v2.0</span>
     <span class="badge badge-cyan">🎮 Battle Royale</span>
   </div>
@@ -661,8 +647,8 @@ h2 {
   </div>
 
   <div class="footer">
-    © 2026 <strong>TCP NAIM</strong> — All Rights Reserved<br>
-    <span style="font-size:0.7rem;opacity:0.6;">🔥 Bangladesh's #1 Squad Bot 🔥</span>
+    © 2026 <strong>TCP BILAL</strong> — All Rights Reserved<br>
+    <span style="font-size:0.7rem;opacity:0.6;">🔥 ALGERIA's #1 Squad Bot 🔥</span>
   </div>
 </div>
 </body>
@@ -678,7 +664,7 @@ async def handle_index(request: web.Request) -> web.Response:
             pass
     return web.Response(text=content, content_type="text/html", charset="utf-8")
 
-# ==================== 🇧🇩 CLAN JOIN API ENDPOINT ====================
+# ==================== 🇩🇿 CLAN JOIN API ENDPOINT ====================
 async def handle_api_clan_join(request: web.Request) -> web.Response:
     try:
         data = await request.json()
@@ -710,12 +696,12 @@ async def handle_api_clan_join(request: web.Request) -> web.Response:
 
         return web.json_response({
             'brand': BRAND_NAME,
-            'message': f'✅ Clan join requests sent successfully for {success_count} / {total_accounts} accounts! 🇧🇩'
+            'message': f'✅ Clan join requests sent successfully for {success_count} / {total_accounts} accounts! 🇩🇿'
         }, status=200)
     except Exception as e:
         return web.json_response({'error': str(e)}, status=500)
 
-# ==================== 🇧🇩 GUILD INFO API ENDPOINT ====================
+# ==================== 🇩🇿 GUILD INFO API ENDPOINT ====================
 GUILD_CACHE_FILE = "guild_exp_cache.json"
 
 def load_guild_cache():
@@ -862,7 +848,7 @@ async def handle_add_account(request: web.Request) -> web.Response:
         with open(accounts_file, "w", encoding="utf-8") as f:
             json.dump(existing, f, indent=2)
 
-        bot_state.log(f"🇧🇩 New account added to rotation: {identifier}", "success")
+        bot_state.log(f"🇩🇿 New account added to rotation: {identifier}", "success")
 
         if "on_account_added" in bot_state.refresh_callbacks:
             asyncio.create_task(bot_state.refresh_callbacks["on_account_added"](data))
@@ -1086,7 +1072,7 @@ async def handle_api_logs(request: web.Request) -> web.Response:
             t = entry.get("time", "")
             msg = entry.get("message", "")
             level = entry.get("level", "info")
-            # 🇧🇩 RAFIN Premium Colors
+            # 🇩🇿 RAFIN Premium Colors
             if level == "success":
                 color = "#00ff64"     # BD Green
             elif level in ("warning", "error"):
@@ -1099,7 +1085,7 @@ async def handle_api_logs(request: web.Request) -> web.Response:
     return web.json_response({"logs": formatted_logs}, status=200)
 
 
-# ==================== 🇧🇩 START WEB DASHBOARD ====================
+# ==================== 🇩🇿 START WEB DASHBOARD ====================
 async def start_web_dashboard(host: str = "0.0.0.0", port: int = 20333):
     app = web.Application()
     app.router.add_get("/", handle_index)
@@ -1120,13 +1106,13 @@ async def start_web_dashboard(host: str = "0.0.0.0", port: int = 20333):
     site = web.TCPSite(runner, host, port)
     await site.start()
 
-    # 🇧🇩 Premium startup log
+    # 🇩🇿 Premium startup log
     print("\033[38;5;196m" + "═" * 64 + "\033[0m")
-    print("\033[38;5;46m  🇧🇩  TCP NAIM — PREMIUM DASHBOARD SERVER  🇧🇩\033[0m")
-    print("\033[38;5;220m  ⚡ PREMIUM SQUAD BOT v2.0 | © 2026 TCP NAIM\033[0m")
+    print("\033[38;5;46m  🇩🇿  TCP BILAL — PREMIUM DASHBOARD SERVER  🇩🇿\033[0m")
+    print("\033[38;5;220m  ⚡ PREMIUM SQUAD BOT v2.0 | © 2026 TCP BILAL\033[0m")
     print("\033[38;5;196m" + "═" * 64 + "\033[0m")
     print(f"\033[38;5;46m  ✔ Dashboard URL : http://{host}:{port}\033[0m")
-    print(f"\033[38;5;220m  🌏 Country       : Bangladesh 🇧🇩\033[0m")
+    print(f"\033[38;5;220m  🌏 Country       : ALGERIA 🇩🇿\033[0m")
     print(f"\033[38;5;51m  🎮 Mode          : Battle Royale Squad\033[0m")
     print("\033[38;5;196m" + "═" * 64 + "\033[0m\n")
 

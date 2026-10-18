@@ -61,8 +61,8 @@ except Exception:
 # ═══════════════════════════ CONFIG ═══════════════════════════
 WEB_HOST = "0.0.0.0"
 WEB_PORT = 20333
-ADMIN_PASSWORD = "frexy1only"
-BRAND_WEB_NAME = "FREXY GLORY"
+ADMIN_PASSWORD = "BILALKNG"
+BRAND_WEB_NAME = "LOL GLORY"
 
 ACCOUNTS_FILE = "accounts.json"
 TOKEN_CACHE_FILE = "token_cache.json"
